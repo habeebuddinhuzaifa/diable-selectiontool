@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>disable selection of text on web page - rathorji.in</title>
+   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+<body>
+
+  <a href="#">Habeebuddin.com</a>
+
+<h3>How to disable text selection on html web page using JQuery?</h3>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+<script type="text/javascript">
+    (function($){
+        $.fn.disableSelection = function() {
+            return this
+                     .attr('unselectable', 'on')
+                     .css('user-select', 'none')
+                     .on('selectstart', false);
+        };
+    })(jQuery);
+
+    $('body').disableSelection();
+</script>
+
+</body>
+</html>
